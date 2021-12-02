@@ -8,7 +8,6 @@ import LogIn from './pages/LogIn'
 import SignUp from './pages/SignUp'
 import Error404 from './pages/404'
 
-
 const App = () => {
     return (
         <BrowserRouter>

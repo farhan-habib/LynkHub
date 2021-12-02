@@ -1,14 +1,22 @@
 import { React, Fragment } from 'react'
 import NavBar from '../components/NavBar'
+import ErrorHero from '../components/ErrorHero'
 import Footer from '../components/Footer'
-import './404.css'
 
+const MenuItems = [
+    { title: 'Home',link: '/', class: 'nav-links'},
+    { title: 'About',link: '/about', class: 'nav-links'},
+    { title: 'Profiles',link: '/profiles', class: 'nav-links'},
+    { title: 'MyProfile',link: '/myprofile', class: 'nav-links'},
+    { title: 'LogIn',link: '/login', class: 'nav-links'},
+    { title: 'SignUp',link: '/signup', class: 'nav-links'},
+]
 
 const Error404 = () => {
     return (
         <Fragment>
-            <NavBar />
-            <h1>Error 404 Page Not found</h1>
+            <NavBar menu= { MenuItems } />
+            <ErrorHero />
             <Footer />
         </Fragment>
     )

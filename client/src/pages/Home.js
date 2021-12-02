@@ -1,14 +1,21 @@
-import { React, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import NavBar from '../components/NavBar'
 import Hero from '../components/HeroSection'
 import Footer from '../components/Footer'
-import './Home.css'
 
+const MenuItems = [
+    { title: 'Home',link: '/', class: 'nav-current'},
+    { title: 'About',link: '/about', class: 'nav-links'},
+    { title: 'Profiles',link: '/profiles', class: 'nav-links'},
+    { title: 'My Profile',link: '/myprofile', class: 'nav-links'},
+    { title: 'Log In',link: '/login', class: 'nav-links'},
+    { title: 'Sign Up',link: '/signup', class: 'nav-links'},
+]
 
 const Home = () => {
     return (
         <Fragment>
-            <NavBar />
+            <NavBar menu = { MenuItems }/>
             <Hero />
             <Footer />
         </Fragment>
