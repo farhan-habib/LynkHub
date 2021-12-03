@@ -1,88 +1,87 @@
 :root {
-    --purple:rgb(182, 146, 216);
-    --gray:rgb(55, 55, 55);
-    --dgray: rgb(77, 77, 77);
+	--purple: rgb(182, 146, 216);
+	--gray: rgb(55, 55, 55);
+	--dgray: rgb(77, 77, 77);
 }
 
 .home-nav-link {
-    text-decoration: none;
+	text-decoration: none;
 }
 
-.container {
-    background: linear-gradient(90deg, var(--gray) 0%, var(--dgray) 100%);
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
+.nav-container {
+	background: linear-gradient(90deg, var(--gray) 0%, var(--dgray) 100%);
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
 }
 
 .navbar-logo {
-    color: var(--purple);
-    justify-self: start;
-    margin-left: 20px;
-    cursor: pointer;
-    font-size: 1.2rem;
+	color: var(--purple);
+	justify-self: start;
+	margin-left: 20px;
+	cursor: pointer;
+	font-size: 1.2rem;
 }
 
 .nav-menu {
-    display: grid;
-    grid-template-columns: repeat(6, auto);
-    grid-gap: 10px;
-    list-style: none;
-    text-align: center;
-    width: 60vw;
-    justify-content: end;
-    margin-right: 2rem;
+	display: grid;
+	grid-template-columns: repeat(6, auto);
+	grid-gap: 10px;
+	list-style: none;
+	text-align: center;
+	width: 60vw;
+	justify-content: end;
+	margin-right: 2rem;
 }
 
 .nav-links {
-    color: var(--purple);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
+	color: var(--purple);
+	text-decoration: none;
+	padding: 0.5rem 1rem;
 }
 
 .nav-current {
-    color: var(--purple);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid var(--purple);
+	color: var(--purple);
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+	border-bottom: 1px solid var(--purple);
 }
 
 .nav-links:hover {
-    border-bottom: 3px solid var(--purple);
+	border-bottom: 3px solid var(--purple);
 }
 .nav-current:hover {
-    border-bottom: 3px solid var(--purple);
+	border-bottom: 3px solid var(--purple);
 }
 
-
 @media screen and (max-width: 500px) {
-    .container {
-        height: 70px;
-        font-size: 0.8rem;
-    }
+	.container {
+		height: 70px;
+		font-size: 0.8rem;
+	}
 
-    .navbar-logo {
-        /* margin-left: 20px; */
-        font-size: 0.8rem;
-    }
+	.navbar-logo {
+		/* margin-left: 20px; */
+		font-size: 0.8rem;
+	}
 }
 
 @media screen and (max-width: 370px) {
-    .container {
-        height: 65px;
-        font-size: 0.6rem;
-    }
+	.container {
+		height: 65px;
+		font-size: 0.6rem;
+	}
 
-    .navbar-logo {
-        /* margin-left: 20px; */
-        font-size: 0.6rem;
-    }
+	.navbar-logo {
+		/* margin-left: 20px; */
+		font-size: 0.6rem;
+	}
 
-    .nav-menu {
-        grid-gap: 7px;
-        width: 60vw;
-        margin-right: 1.5rem;
-    }
+	.nav-menu {
+		grid-gap: 7px;
+		width: 60vw;
+		margin-right: 1.5rem;
+	}
 }
