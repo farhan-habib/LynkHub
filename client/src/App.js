@@ -1,23 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
-import About from './pages/About'
-import Profiles from './pages/Profiles'
-import MyProfile from './pages/MyProfile'
 import LogIn from './pages/LogIn'
-import SignUp from './pages/SignUp'
+import LogOut from './pages/LogOut'
 import Error404 from './pages/404'
 
+
 const App = () => {
+    const [loggedIn, setLoggedIn] = useState(false);
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/about" exact component={About} />
-                <Route path="/profiles" exact component={Profiles} />
-                <Route path="/myprofile" exact component={MyProfile} />
-                <Route path="/login" exact component={LogIn} />
-                <Route path="/signup" exact component={SignUp} />
+                <Route exact path="/">
+                    <Home isLoggedIn = {loggedIn} />
+                </Route>
+                <Route exact path="/login">
+                    <LogIn isLoggedIn = {loggedIn} />
+                </Route>
+                <Route exact path="/logout">
+                    <LogOut isLoggedIn = {loggedIn} />
+                </Route>
                 <Route path="/" component={Error404}/>
             </Switch>
         </BrowserRouter>

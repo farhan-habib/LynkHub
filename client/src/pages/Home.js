@@ -1,22 +1,30 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import NavBar from '../components/NavBar'
-import Hero from '../components/HeroSection'
 import Footer from '../components/Footer'
 
-const MenuItems = [
-    { title: 'Home',link: '/', class: 'nav-current'},
-    { title: 'About',link: '/about', class: 'nav-links'},
-    { title: 'Profiles',link: '/profiles', class: 'nav-links'},
-    { title: 'My Profile',link: '/myprofile', class: 'nav-links'},
-    { title: 'Log In',link: '/login', class: 'nav-links'},
-    { title: 'Sign Up',link: '/signup', class: 'nav-links'},
+const loggedInMenu = [
+    { title: 'Home',link: '/', class: 'nav-current', props: {}},
+    { title: 'Log Out',link: '/logout', class: 'nav-links', props: {}},
 ]
 
-const Home = () => {
+const loggedOutMenu = [
+    { title: 'Home',link: '/', class: 'nav-current'},
+    { title: 'Log In',link: '/login', class: 'nav-links'},
+]
+
+const switchAccountState = () => {
+
+}
+
+const Home = (props) => {
+    console.log(props.isLoggedIn)
     return (
         <Fragment>
-            <NavBar menu = { MenuItems }/>
-            <Hero />
+            {props.isLoggedIn && <NavBar menu = { loggedInMenu }/>}
+            {!props.isLoggedIn && <NavBar menu = { loggedOutMenu }/>}
+            <button onClick={switchAccountState}>
+                Switch
+            </button>
             <Footer />
         </Fragment>
     )

@@ -1,11 +1,13 @@
 :root {
 	--purple: rgb(182, 146, 216);
+	--dpurple: rgb(101, 19, 177);
+	--yellow: rgb(218, 235, 72);
 	--gray: rgb(55, 55, 55);
-	--dgray: rgb(77, 77, 77);
+	--lgray: rgb(70, 70, 70);
 }
 
 .footer-container {
-	background: linear-gradient(90deg, var(--gray) 0%, var(--dgray) 100%);
+	background: linear-gradient(90deg, var(--gray) 0%, var(--lgray) 100%);
 	padding: 2.3rem 0 2rem 0;
 	display: flex;
 	color: var(--purple);
@@ -14,8 +16,18 @@
 	align-items: center;
 	font-size: 1.2rem;
 	text-decoration: none;
-	width: 85%;
-	border-radius: 5px 50px 0px 0px;
+	width: 100%;
+	border-top: 5px solid;
+	border-bottom: 5px solid;
+	border-image: linear-gradient(
+		to right,
+		var(--dpurple),
+		var(--purple),
+		var(--dpurple),
+		var(--purple),
+		var(--dpurple)
+	);
+	border-image-slice: 1;
 }
 
 .social-icons {

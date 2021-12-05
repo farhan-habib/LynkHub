@@ -6,11 +6,18 @@ import './Button.css'
 const Button = (props) => {
     return (
         <Fragment>
+            {props.link != null && 
             <Link to={props.link}>
                 <button className="btn">
                     {props.title}
                 </button>
             </Link>
+            }     
+            {props.link == null &&
+                <button className="btn">
+                    {props.title}
+                </button>
+            }      
         </Fragment>
     )
 }
