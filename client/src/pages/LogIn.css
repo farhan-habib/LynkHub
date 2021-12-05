@@ -1,11 +1,13 @@
 :root {
 	--purple: rgb(182, 146, 216);
 	--dpurple: rgb(107, 40, 170);
-	--yellow: rgb(218, 235, 72);
 	--gray: rgb(55, 55, 55);
 	--lgray: rgb(70, 70, 70);
 }
-
+/* #b692d8 */
+/* #6b28aa */
+/* #373737 */
+/* #464646 */
 .login-container {
 	margin: 0;
 	padding: 0;
@@ -17,7 +19,17 @@
 	height: 100vh;
 	width: 100vw;
 	display: flex;
-	background: url('../components/img-login-background.png') no-repeat center;
+	background: linear-gradient(
+		315deg,
+		var(--lgray),
+		var(--gray),
+		var(--purple),
+		var(--dpurple)
+	);
+	background-size: 800% 800%;
+	-webkit-animation: LogInBackground 30s ease infinite;
+	-moz-animation: LogInBackground 30s ease infinite;
+	animation: LogInBackground 30s ease infinite;
 	justify-content: center;
 	align-items: center;
 }
@@ -120,4 +132,37 @@
 	padding: 10px 20px;
 	border-radius: 5px;
 	cursor: pointer;
+}
+@-webkit-keyframes LogInBackground {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@-moz-keyframes LogInBackground {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@keyframes LogInBackground {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
