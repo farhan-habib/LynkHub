@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "node app.js",
 	"setup": "node ./setup/create_tables.js",
-	"restart": "node ./setup/restart.js"
+	"reset": "node ./setup/restart.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

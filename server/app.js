@@ -1,20 +1,37 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const path = require('path');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const express = require('express');
+const app = express();
+const router = express.Router();
 
-var app = express();
+const port = 3000;
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
-module.exports = app;
+router.use('/', require("./routers/profiles.js")); //find a profile page
+router.use('/', require("./routers/myprofile.js")); //edit my profile page
+router.use('/', require("./routers/static/home.js")); //home page
+router.use('/', require("./routers/static/about.js")); //about page
+router.use('/', require("./routers/account_management/login.js")); //login page
+router.use('/', require("./routers/account_management/logout.js")); //logout page
+router.use('/', require("./routers/account_management/signup.js")); //sign up page
+
+
+
+router.use('*', require("./routers/static/pagenotfound.js")); //404 page
+
+
+
+
+
+app.use('/', router); //makes express use router on every web address
+
+
+
+app.listen(port, function (err) { //gets the webserver to start listening to requests
+	if (err) {
+		console.log("Error in server setup");//runs on error 
+	}
+	console.log("Server listening on Port", port);
+	console.log(`http://localhost:${port}`);
+})
