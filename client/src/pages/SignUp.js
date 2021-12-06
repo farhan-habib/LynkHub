@@ -5,13 +5,11 @@ import './SignUp.css'
 
 
 const loggedInMenu = [
-    { title: 'Home',link: '/', class: 'nav-links'},
     { title: 'About',link: '/about', class: 'nav-links'},
     { title: 'Log Out',link: '/logout', class: 'nav-links'},
 ]
 
 const loggedOutMenu = [
-    { title: 'Home',link: '/', class: 'nav-links'},
     { title: 'About',link: '/about', class: 'nav-links'},
     { title: 'Sign Up',link: '/signup', class: 'nav-current'},
 ]
@@ -26,7 +24,7 @@ const SignUp = (props) => {
                     <div className="signup-wrapper">
                         <form action="" className="form">
                             <img src="images/avatar.png" alt="" />
-                            <h2>Sign Up</h2>
+                            <header>Sign Up</header>
                             <div className="input-group">
                                 <input type="text" name="signinUsername" id="signinUsername" required />
                                 <label>Username</label>

@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 
 const loggedInMenu = [
     { title: 'About',link: '/about', class: 'nav-current'},
+    { title: 'MyProfile',link: '/myprofile', class: 'nav-current'},
     { title: 'Log Out',link: '/logout', class: 'nav-links'},
 ]
 

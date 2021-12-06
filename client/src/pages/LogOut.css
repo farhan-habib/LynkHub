@@ -13,7 +13,8 @@
 	padding: 0;
 	box-sizing: border-box;
 	background-size: cover;
-	font-family: sans-serif;
+	font-family: 'Courier New', serif;
+	font-weight: normal;
 }
 .logout-wrapper {
 	height: 90vh;
@@ -38,7 +39,7 @@
 	margin-left: auto;
 	border: none;
 	outline: none;
-	background: var(--purple);
+	background: var(--dpurple);
 	font-size: 1rem;
 	text-transform: uppercase;
 	letter-spacing: 1px;

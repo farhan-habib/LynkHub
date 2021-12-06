@@ -3,13 +3,12 @@ import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 
 const loggedInMenu = [
-    { title: 'Home',link: '/', class: 'nav-current'},
     { title: 'About',link: '/about', class: 'nav-links'},
+    { title: 'MyProfile',link: '/myprofile', class: 'nav-links'},
     { title: 'Log Out',link: '/logout', class: 'nav-links'},
 ]
 
 const loggedOutMenu = [
-    { title: 'Home',link: '/', class: 'nav-current'},
     { title: 'About',link: '/about', class: 'nav-links'},
     { title: 'Log In',link: '/login', class: 'nav-links'},
 ]
@@ -21,7 +20,6 @@ const Home = (props) => {
         <Fragment>
             {props.isLoggedIn && <NavBar menu = { loggedInMenu }/>}
             {!props.isLoggedIn && <NavBar menu = { loggedOutMenu }/>}
-
             <Footer />
         </Fragment>
     )
