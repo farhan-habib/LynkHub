@@ -27,7 +27,7 @@ const LogIn = (props) => {
                     <div className="login-wrapper">
                         <form action="" className="form">
                             <img src="images/avatar.png" alt="" />
-                            <h2>Log In</h2>
+                            <header>Log In</header>
                             <div className="input-group">
                                 <input type="text" name="loginUser" id="loginUser" required /> 
                                 <label>Username</label>

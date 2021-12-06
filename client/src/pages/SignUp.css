@@ -13,7 +13,8 @@
 	padding: 0;
 	box-sizing: border-box;
 	background-size: cover;
-	font-family: sans-serif;
+	font-family: 'Courier New', serif;
+	font-weight: normal;
 }
 .signup-wrapper {
 	height: 90vh;
@@ -84,7 +85,8 @@
 	background: rgba(255, 255, 255, 0.8);
 	border-radius: 50%;
 }
-.form h2 {
+.form header {
+	font-size: 25px;
 	text-align: center;
 	letter-spacing: 1px;
 	margin-bottom: 2rem;
@@ -132,6 +134,7 @@
 	padding: 10px 20px;
 	border-radius: 5px;
 	cursor: pointer;
+	text-align: center;
 }
 
 @-webkit-keyframes LogInBackground {
