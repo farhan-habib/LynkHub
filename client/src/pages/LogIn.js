@@ -1,4 +1,5 @@
 import { React, Fragment } from 'react'
+import { Link } from 'react-router-dom'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import './LogIn.css'
@@ -28,14 +29,17 @@ const LogIn = (props) => {
                             <img src="images/avatar.png" alt="" />
                             <h2>Log In</h2>
                             <div className="input-group">
-                                <input type="text" name="loginUser" id="loginUser" required />
+                                <input type="text" name="loginUser" id="loginUser" required /> 
                                 <label>Username</label>
                             </div>
                             <div className="input-group">
                                 <input type="password" name="loginPassword" id="loginPassword" required />
                                 <label>Password</label>
                             </div>
-                            <div className="logout-btn" onClick={() => props.setLoggedIn(true)}>Log In</div>
+                            <div className="login-btn" onClick={() => props.setLoggedIn(true)}>Log In</div>
+                            <div className="signup-link-wrapper">
+                                <div className="singup-link-btn">Don't Have an account? <Link to="/signup" className="signup-link">Sign Up.</Link></div>
+                            </div>
                             {/* <input type="submit" value="Login" className="submit-btn" /> */}
                         </form>
                     </div>
