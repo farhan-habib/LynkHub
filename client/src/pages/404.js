@@ -5,14 +5,10 @@ import Footer from '../components/Footer'
 
 const MenuItems = [
     { title: 'Home',link: '/', class: 'nav-links'},
-    { title: 'About',link: '/about', class: 'nav-links'},
-    { title: 'Profiles',link: '/profiles', class: 'nav-links'},
-    { title: 'MyProfile',link: '/myprofile', class: 'nav-links'},
-    { title: 'LogIn',link: '/login', class: 'nav-links'},
-    { title: 'SignUp',link: '/signup', class: 'nav-links'},
 ]
 
-const Error404 = () => {
+const Error404 = (props) => {
+    console.log(`Logged In On 404:${props.isLoggedIn}`)
     return (
         <Fragment>
             <NavBar menu= { MenuItems } />

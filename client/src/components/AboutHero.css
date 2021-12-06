@@ -1,4 +1,4 @@
-.err-hero-container {
+.about-hero-container {
 	height: 100vh;
 	width: 100%;
 	display: flex;
@@ -9,11 +9,20 @@
 	justify-content: center;
 }
 
-.err-hero-container > header {
+.about-hero-container > header {
+	font-weight: 500;
 	color: white;
 	font-size: 100px;
 	margin-top: -100px;
-	padding-bottom: 10px;
+}
+
+.about-hero-container > p {
+	margin-top: 8px;
+	padding-left: 7%;
+	padding-right: 7%;
+	color: white;
+	font-size: 32px;
+	text-align: center;
 }
 
 .hero-btns {
@@ -35,6 +44,10 @@
 	.err-hero-container > header {
 		font-size: 50px;
 		margin-top: -100px;
+	}
+
+	.err-hero-container > p {
+		font-size: 20px;
 	}
 
 	.btn-mobile {

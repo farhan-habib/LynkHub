@@ -6,7 +6,7 @@ const ErrorHero = () => {
     return (
         <Fragment>
             <div className="err-hero-container">
-                <h1 className="header">Error 404                                        <i className="fas fa-exclamation" /></h1>
+                <header className="header">Error 404                                        <i className="fas fa-exclamation" /></header>
                 <Button title="Go Home" link="/" />
             </div>
         </Fragment>

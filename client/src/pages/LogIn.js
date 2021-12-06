@@ -4,30 +4,39 @@ import Footer from '../components/Footer'
 import './LogIn.css'
 
 
-const MenuItems = [
+const loggedInMenu = [
     { title: 'Home',link: '/', class: 'nav-links'},
-    { title: 'Sign Up',link: '/signup', class: 'nav-links'},
+    { title: 'About',link: '/about', class: 'nav-links'},
+    { title: 'Log Out',link: '/logout', class: 'nav-links'},
+]
+
+const loggedOutMenu = [
+    { title: 'Home',link: '/', class: 'nav-links'},
+    { title: 'About',link: '/about', class: 'nav-links'},
+    { title: 'Log In',link: '/login', class: 'nav-current'},
 ]
 
 const LogIn = (props) => {
-    console.log(props.isLoggedIn)
+    console.log(`Logged In On LogIn:${props.isLoggedIn}`)
     return (
         <Fragment>
-            <NavBar menu = { MenuItems } />
+            {props.isLoggedIn && <NavBar menu = { loggedInMenu }/>}
+            {!props.isLoggedIn && <NavBar menu = { loggedOutMenu }/>}
                 <container className="login-container">
-                    <div class="login-wrapper">
-                        <form action="" class="form">
+                    <div className="login-wrapper">
+                        <form action="" className="form">
                             <img src="images/avatar.png" alt="" />
                             <h2>Log In</h2>
-                            <div class="input-group">
+                            <div className="input-group">
                                 <input type="text" name="loginUser" id="loginUser" required />
-                                <label for="loginUser">Username</label>
+                                <label>Username</label>
                             </div>
-                            <div class="input-group">
+                            <div className="input-group">
                                 <input type="password" name="loginPassword" id="loginPassword" required />
-                                <label for="loginPassword">Password</label>
-                                </div>
-                            <input type="submit" value="Login" class="submit-btn" />
+                                <label>Password</label>
+                            </div>
+                            <div className="logout-btn" onClick={() => props.setLoggedIn(true)}>Log In</div>
+                            {/* <input type="submit" value="Login" className="submit-btn" /> */}
                         </form>
                     </div>
                 </container>
