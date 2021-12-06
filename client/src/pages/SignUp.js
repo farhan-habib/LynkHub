@@ -5,13 +5,11 @@ import './SignUp.css'
 
 
 const loggedInMenu = [
-    { title: 'Home',link: '/', class: 'nav-links'},
     { title: 'About',link: '/about', class: 'nav-links'},
     { title: 'Log Out',link: '/logout', class: 'nav-links'},
 ]
 
 const loggedOutMenu = [
-    { title: 'Home',link: '/', class: 'nav-links'},
     { title: 'About',link: '/about', class: 'nav-links'},
     { title: 'Sign Up',link: '/signup', class: 'nav-current'},
 ]

@@ -4,13 +4,11 @@ import Footer from '../components/Footer'
 import './LogOut.css'
 
 const loggedInMenu = [
-    { title: 'Home',link: '/', class: 'nav-links'},
     { title: 'About',link: '/about', class: 'nav-links'},
     { title: 'Log Out',link: '/logout', class: 'nav-current'},
 ]
 
 const loggedOutMenu = [
-    { title: 'Home',link: '/', class: 'nav-links'},
     { title: 'About',link: '/about', class: 'nav-links'},
     { title: 'Log In',link: '/login', class: 'nav-current'},
 ]

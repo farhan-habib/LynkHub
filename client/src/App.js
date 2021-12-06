@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
+import MyProfile from './pages/MyProfile'
 import LogIn from './pages/LogIn'
 import LogOut from './pages/LogOut'
 import SignUp from './pages/SignUp'
@@ -18,6 +19,9 @@ const App = () => {
                 </Route>
                 <Route exact path="/about">
                     <About isLoggedIn = {loggedIn} setLoggedIn = {setLoggedIn} />
+                </Route>
+                <Route exact path="/myprofile">
+                    <MyProfile isLoggedIn = {loggedIn} setLoggedIn = {setLoggedIn} />
                 </Route>
                 <Route exact path="/login">
                     <LogIn isLoggedIn = {loggedIn} setLoggedIn = {setLoggedIn} />
