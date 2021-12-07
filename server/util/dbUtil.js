@@ -3,8 +3,6 @@ const path = require("path");
 const sqlite3 = require('sqlite3').verbose();
 
 let dbPath = path.join(".", "data", "userData.sqlite");
-
-
 class dbUtil {
 
 	constructor() {

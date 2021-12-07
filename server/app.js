@@ -2,7 +2,6 @@ const path = require('path');
 const express = require('express');
 const session = require("express-session")
 const bodyParser = require("body-parser");
-
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy;
 
@@ -47,7 +46,7 @@ router.use('*', require("./routers/static/error404.js")); //404 page
 
 
 
-console.log(require("./util/dbUtil").password());
+// console.log(require("./util/dbUtil").password());
 
 app.listen(port, function (err) { //gets the webserver to start listening to requests
 	if (err) {

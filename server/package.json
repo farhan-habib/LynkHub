@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node app.js",
     "setup": "node ./setup/create_tables.js",
-    "reset": "node ./setup/restart.js"
+    "reset": "node ./setup/restart.js",
   },
   "dependencies": {
     "body-parser": "^1.19.0",
