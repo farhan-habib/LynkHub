@@ -10,14 +10,10 @@ function createDb(dbPath) {
 	db.serialize(function () {
 		db.run(`CREATE TABLE users (
 			id integer PRIMARY KEY AUTOINCREMENT,
-			salt varchar,
-			password_hash varchar,
-			username varchar,
-			email varchar,
-			first_name varchar,
-			middle_name varchar,
-			last_name varchar
-			);`);
+			username text,
+			password text,
+			salt varchar
+		);`);
 
 		db.run(`CREATE TABLE contact_info (
 				id integer PRIMARY KEY AUTOINCREMENT,
