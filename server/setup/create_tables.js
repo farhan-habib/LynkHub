@@ -11,7 +11,7 @@ function createDb(dbPath) {
 		db.run(`CREATE TABLE users (
 			id integer PRIMARY KEY AUTOINCREMENT,
 			username text,
-			password text,
+			hashed_password text,
 			salt varchar
 		);`);
 
