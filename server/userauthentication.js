@@ -2,12 +2,14 @@
 
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-
+const dbUtil = require("./util/dbUtil")
 
 
 passport.use(new LocalStrategy(
-	function (username, password, done) {
-		if (username == "user" && password == "password") return done(null, { username: "bob", id: "30" });
+	async function (username, password, done) {
+		if (await dbUtil.checkuserPassword(username, password)) {
+			return done(null, await dbUtil.getUserFromUsername(username));
+		}
 		else return done(null, false)
 	}
 ));
@@ -16,6 +18,6 @@ passport.serializeUser(function (user, done) {
 	done(null, user.id);
 });
 
-passport.deserializeUser(function (id, done) {
-	done(null, { username: "bob", id: "30" });
+passport.deserializeUser(async function (id, done) {
+	done(null, await dbUtil.getUserFromId(id));
 });
