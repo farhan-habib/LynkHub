@@ -2,7 +2,6 @@
 const path = require("path");
 const sqlite3 = require('sqlite3').verbose();
 const passwordUtil = require("./passwordUtil.js");
-const User = require("../data_structures/User");
 const crypto = require('crypto');
 let dbPath = path.join(".", "data", "userData.sqlite");
 
