@@ -20,20 +20,30 @@ app.use(session({
 	saveUninitialized: true,
 	cookie: { maxAge: 60 * 60 * 1000 } // 1 hour
 }));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
 
 
 
-app.get('/dashboard', connectEnsureLogin.ensureLoggedIn('/login'), (req, res) => {
-	res.send(`<script> console.log(req)</script>Hello ${req.user.username}. Your session ID is ${req.sessionID} and your session expires in ${req.session.cookie.maxAge} milliseconds.<br><br>`);
+// app.get('/dashboard', connectEnsureLogin.ensureLoggedIn('/login'), (req, res) => {
+app.get('/dashboard', (req, res) => {
+	if (req.user) {
+		console.log("user logged in");
+		console.log(req.user);
+	} else {
+		console.log("user not logged in");
+	}
+
+	res.send(`Hello USER ${req?.user?.username} with ID ${req?.user?.id}. Your session ID is ${req?.sessionID} and your session expires in ${req.session.cookie.maxAge} milliseconds.<br><br>`);
 });
 
 app.use('/', router); //makes express use router on every web address
 
 require("./userauthentication.js");
+
 
 router.use('/', require("./routers/account_management/login.js")); //login page
 router.use('/', require("./routers/account_management/logout.js")); //logout page
