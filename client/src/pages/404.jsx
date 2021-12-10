@@ -1,7 +1,7 @@
 import { React, Fragment } from 'react'
-import NavBar from '../components/NavBar'
-import ErrorHero from '../components/ErrorHero'
-import Footer from '../components/Footer'
+import NavBar from '../components/NavBar.jsx'
+import ErrorHero from '../components/ErrorHero.jsx'
+import Footer from '../components/Footer.jsx'
 
 const MenuItems = [
     { title: 'Home',link: '/', class: 'nav-links'},

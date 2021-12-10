@@ -1,8 +1,7 @@
 import { React, Fragment } from 'react'
-import { Link } from 'react-router-dom'
-import NavBar from '../components/NavBar'
-import Footer from '../components/Footer'
-import './LogIn.css'
+import NavBar from '../components/NavBar.jsx'
+import Footer from '../components/Footer.jsx'
+import './SignUp.css'
 
 
 const loggedInMenu = [
@@ -12,32 +11,33 @@ const loggedInMenu = [
 
 const loggedOutMenu = [
     { title: 'About',link: '/about', class: 'nav-links'},
-    { title: 'Log In',link: '/login', class: 'nav-current'},
+    { title: 'Sign Up',link: '/signup', class: 'nav-current'},
 ]
 
-const LogIn = (props) => {
+const SignUp = (props) => {
     console.log(`Logged In On LogIn:${props.isLoggedIn}`)
     return (
         <Fragment>
             {props.isLoggedIn && <NavBar menu = { loggedInMenu }/>}
             {!props.isLoggedIn && <NavBar menu = { loggedOutMenu }/>}
-                <container className="login-container">
-                    <div className="login-wrapper">
+                <container className="signup-container">
+                    <div className="signup-wrapper">
                         <form action="" className="form">
                             <img src="images/avatar.png" alt="" />
-                            <header>Log In</header>
+                            <header>Sign Up</header>
                             <div className="input-group">
-                                <input type="text" name="loginUser" id="loginUser" required /> 
+                                <input type="text" name="signinUsername" id="signinUsername" required />
                                 <label>Username</label>
                             </div>
                             <div className="input-group">
-                                <input type="password" name="loginPassword" id="loginPassword" required />
+                                <input type="password" name="signinPassword" id="signinPassword" required />
                                 <label>Password</label>
                             </div>
-                            <div className="login-btn" onClick={() => props.setLoggedIn(true)}>Log In</div>
-                            <div className="signup-link-wrapper">
-                                <div className="singup-link-btn">Don't Have an account? <Link to="/signup" className="signup-link">Sign Up.</Link></div>
+                            <div className="input-group">
+                                <input type="password" name="confirmsigninPassword" id="confirmsigninPassword" required />
+                                <label>Confirm Password</label>
                             </div>
+                            <div className="signup-btn" onClick={() => props.setLoggedIn(true)}>Sign Up</div>
                             {/* <input type="submit" value="Login" className="submit-btn" /> */}
                         </form>
                     </div>
@@ -47,4 +47,4 @@ const LogIn = (props) => {
     )
 }
 
-export default LogIn
+export default SignUp

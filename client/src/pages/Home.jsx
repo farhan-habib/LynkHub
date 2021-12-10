@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
-import NavBar from '../components/NavBar'
-import HomeHero from '../components/HomeHero'
-import Footer from '../components/Footer'
+import NavBar from '../components/NavBar.jsx'
+import HomeHero from '../components/HomeHero.jsx'
+import Footer from '../components/Footer.jsx'
 
 const loggedInMenu = [
     { title: 'About',link: '/about', class: 'nav-links'},

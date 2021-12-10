@@ -1,6 +1,6 @@
 import { React, Fragment } from 'react'
-import NavBar from '../components/NavBar'
-import Footer from '../components/Footer'
+import NavBar from '../components/NavBar.jsx'
+import Footer from '../components/Footer.jsx'
 import './LogOut.css'
 
 const loggedInMenu = [

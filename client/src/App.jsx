@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
-import MyProfile from './pages/MyProfile'
-import LogIn from './pages/LogIn'
-import LogOut from './pages/LogOut'
-import SignUp from './pages/SignUp'
-import Error404 from './pages/404'
+import Home from './pages/Home.jsx'
+import About from './pages/About.jsx'
+import MyProfile from './pages/MyProfile.jsx'
+import LogIn from './pages/LogIn.jsx'
+import LogOut from './pages/LogOut.jsx'
+import SignUp from './pages/SignUp.jsx'
+import Error404 from './pages/404.jsx'
 
 
 const App = () => {
