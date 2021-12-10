@@ -1,6 +1,5 @@
 import { React, Fragment } from 'react'
 import NavBar from '../components/NavBar'
-import AboutHero from '../components/AboutHero'
 import Footer from '../components/Footer'
 
 const loggedInMenu = [
@@ -20,7 +19,6 @@ const About = (props) => {
         <Fragment>
             {props.isLoggedIn && <NavBar menu = { loggedInMenu }/>}
             {!props.isLoggedIn && <NavBar menu = { loggedOutMenu }/>}
-            <AboutHero isLoggedIn = { props.isLoggedIn } />
             <Footer />
         </Fragment>
     )

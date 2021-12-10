@@ -8,7 +8,7 @@ const AboutHero = (props) => {
             <div className="about-hero-container">
                 <header className="about-header">About</header>
                 <p>Ad eiusmod culpa enim laborum Lorem adipisicing exercitation do.</p>
-                {!props.isLoggedIn && <Button title="Go Home" link="/" />}
+                {!props.loggedIn && <Button title="Log In to Use" link="/login" />}
             </div>
         </Fragment>
     )
