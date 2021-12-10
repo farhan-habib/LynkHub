@@ -19,7 +19,7 @@ const About = (props) => {
         <Fragment>
             {props.isLoggedIn && <NavBar menu = { loggedInMenu }/>}
             {!props.isLoggedIn && <NavBar menu = { loggedOutMenu }/>}
-            <AboutHero isLoggedIn = { props.isLoggedIn } />
+            <AboutHero loggedIn = { props.isLoggedIn } />
             <Footer />
         </Fragment>
     )

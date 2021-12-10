@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import NavBar from '../components/NavBar'
+import HomeHero from '../components/HomeHero'
 import Footer from '../components/Footer'
 
 const loggedInMenu = [
@@ -20,6 +21,7 @@ const Home = (props) => {
         <Fragment>
             {props.isLoggedIn && <NavBar menu = { loggedInMenu }/>}
             {!props.isLoggedIn && <NavBar menu = { loggedOutMenu }/>}
+            <HomeHero />
             <Footer />
         </Fragment>
     )
