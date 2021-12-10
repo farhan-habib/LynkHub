@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import MyProfile from './pages/MyProfile'
+import LogIn from './pages/LogIn'
+import LogOut from './pages/LogOut'
+import SignUp from './pages/SignUp'
+import Error404 from './pages/404'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = () => {
+    const [loggedIn, setLoggedIn] = useState(false);
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/">
+                    <Home isLoggedIn = {loggedIn} setLoggedIn = {setLoggedIn} />
+                </Route>
+                <Route exact path="/about">
+                    <About isLoggedIn = {loggedIn} setLoggedIn = {setLoggedIn} />
+                </Route>
+                <Route exact path="/myprofile">
+                    <MyProfile isLoggedIn = {loggedIn} setLoggedIn = {setLoggedIn} />
+                </Route>
+                <Route exact path="/login">
+                    <LogIn isLoggedIn = {loggedIn} setLoggedIn = {setLoggedIn} />
+                </Route>
+                <Route exact path="/logout">
+                    <LogOut isLoggedIn = {loggedIn} setLoggedIn = {setLoggedIn} />
+                </Route>
+                <Route exact path="/signup">
+                    <SignUp isLoggedIn = {loggedIn} setLoggedIn = {setLoggedIn} />
+                </Route>
+                <Route  path="/">
+                    <Error404 isLoggedIn = {loggedIn} setLoggedIn = {setLoggedIn} />
+                </Route>
+            </Switch>
+        </BrowserRouter>
+    )
 }
 
-export default App;
+export default App
