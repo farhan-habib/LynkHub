@@ -20,21 +20,26 @@ class dbUtil {
 	}
 
 
-
-
+	/**
+	 * 
+	 * @param {String} userId The Id of the user 
+	 * @returns A promise that resolves to an object containing the id as well as username of the user.
+	 */
 	async getUserFromId(userId) {
 		return new Promise((resolve, reject) => {
-			let userData = this.db.get("SELECT users.id, users.username FROM users WHERE ID = $userId",
-				{ $userId: userId },
+			let userData = this.db.get("SELECT users.id, users.username FROM users WHERE ID = $userId", { $userId: userId },
 				function (err, row) {
 					if (err) reject(err);
 					resolve(row);
 				});
-
 		});
-
 	}
 
+	/**
+	 * 
+	 * @param {String} getUserFromUsername The username of the user 
+	 * @returns A promise that resolves to an object containing the id as well as username of the user.
+	 */
 	async getUserFromUsername(username) {
 		return new Promise((resolve, reject) => {
 			let userData = this.db.get("SELECT users.id, users.username FROM users WHERE username = $username", { $username: username },
@@ -45,9 +50,13 @@ class dbUtil {
 
 		});
 	}
-
+	/**
+	 * 
+	 * @param {String} username The username of the user
+	 * @param {String} passwordToCheck The password which you want to verify the validity of
+	 * @returns A promise that resolves to true or false, depending on if the password passed in was the user's password or not
+	 */
 	async checkuserPassword(username, passwordToCheck) {
-
 		return new Promise((resolve, reject) => {
 			this.db.get("SELECT users.hashed_password, users.salt FROM users WHERE username = $username", { $username: username },
 				function (err, row) {
@@ -60,9 +69,13 @@ class dbUtil {
 
 	}
 
-
+	/**
+	 * 
+	 * @param {String} username The username of the user
+	 * @param {String} password The password of the user.
+	 * @returns A promise that resolves to an object containing the id as well as username of the user.
+	 */
 	async createNewUser(username, password) {
-
 		if (await this.getUserFromUsername(username)) { console.log("username in use"); return null; }
 
 		console.log(`Making new user with Username:${username}, and password: ${password}`);
