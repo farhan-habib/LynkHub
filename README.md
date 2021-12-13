@@ -26,7 +26,6 @@
 
 ### Languages and Tools:
 
-
 <div text0="center">
 	<img align="left" alt="JavaScript" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />
 	<img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />
@@ -34,8 +33,6 @@
 	<img align="left" alt="SQLite" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png" />
 </div>
 
-
-  
 <!-- https://shields.io/ -->
 <!-- https://simpleicons.org/ -->
 <!-- https://github.com/simple-icons/simple-icons/blob/develop/slugs.md -->

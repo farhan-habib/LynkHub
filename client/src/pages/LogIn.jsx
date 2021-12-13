@@ -1,4 +1,4 @@
-import { React, Fragment } from 'react'
+import { React, Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 import NavBar from '../components/NavBar.jsx'
 import Footer from '../components/Footer.jsx'
@@ -16,6 +16,26 @@ const loggedOutMenu = [
 ]
 
 const LogIn = (props) => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const onSubmitForm = async e => {
+    e.preventDefault();
+        try {
+            const body = { username, password };
+            const response = await fetch(
+            "http://localhost:5000/todos",
+            {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(body)
+            }
+        );
+        } catch (err) {
+            console.error(err.message);
+        }
+    };
+
     console.log(`Logged In On LogIn:${props.isLoggedIn}`)
     return (
         <Fragment>
@@ -27,7 +47,7 @@ const LogIn = (props) => {
                             <img src="images/avatar.png" alt="" />
                             <header>Log In</header>
                             <div className="input-group">
-                                <input type="text" name="loginUser" id="loginUser" required /> 
+                                <input type="text" required /> 
                                 <label>Username</label>
                             </div>
                             <div className="input-group">

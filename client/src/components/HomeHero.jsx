@@ -9,8 +9,8 @@ const HomeHero = () => {
                 <div className="spacer layer1 flip" />
                     <section className="section">
                         <header className="home-header">LynkHub</header>
-                        <p>Exercitation esse aute proident sunt occaecat cillum do.</p>
-                        <Button className="spacer" link="/about" title="Learn More" />
+                        <p>The Ultimate Site for Saving and Sharing Your Socials</p>
+                        <Button link="/about" title="Click to Learn More" />
                     </section>
                 <div className="spacer layer1" />
             </section>

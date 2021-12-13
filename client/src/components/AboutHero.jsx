@@ -7,8 +7,8 @@ const AboutHero = (props) => {
         <Fragment>
             <div className="about-hero-container">
                 <header className="about-header">About</header>
-                <p>Ad eiusmod culpa enim laborum Lorem adipisicing exercitation do.</p>
-                {!props.loggedIn && <Button title="Log In to Use" link="/login" />}
+                <p>With LynkHub you can save all your social media accounts in one place, and share those usernames with anyone through sending them your user-specific code. </p>
+                <Button title="Log In to Use" link="/login" />
             </div>
         </Fragment>
     )
