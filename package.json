@@ -1,21 +1,24 @@
 {
-  "name": "lynkhub",
-  "version": "1.0.0",
-  "description": "A site for saving your Social media",
-  "main": " ",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/f-habibCA/Lynkhub.git"
-  },
-  "author": "Farhan Habib & Bilal Abraham",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/f-habibCA/Lynkhub/issues"
-  },
-  "homepage": "https://github.com/f-habibCA/Lynkhub#readme",
-  "dependencies": {
-  }
+	"name": "lynkhub",
+	"version": "0.0.1",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"fullstart": "npm i && node ./setup/reset.js && node app.js",
+		"start": "node ./setup/reset.js && node app.js",
+		"reset": "node ./setup/reset.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.19.1",
+		"connect-ensure-login": "^0.1.1",
+		"crypto": "^1.0.1",
+		"express": "^4.17.1",
+		"express-handlebars": "^6.0.2",
+		"express-session": "^1.17.2",
+		"passport": "^0.5.0",
+		"passport-local": "^1.0.0",
+		"sqlite3": "^5.0.2"
+	}
 }
