@@ -6,9 +6,9 @@
 	<ul class="nav-menu">
 		<li><a class="nav-links" href="/about">About</a></li>
 		{{#if (isdefined user.username)}}
-		<li><a class="nav-links" href="/login">Log Out</a></li>
+		<li><a class="nav-links" href="/logout">Log Out</a></li>
 		{{else}}
-		<li><a class="nav-links" href="/logout">Log In</a></li>
+		<li><a class="nav-links" href="/login">Log In</a></li>
 		{{/if}}
 	</ul>
 </nav>

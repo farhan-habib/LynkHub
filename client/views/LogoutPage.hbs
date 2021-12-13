@@ -1,10 +1,14 @@
 <link rel="stylesheet" type="text/css" href="styles/LogoutPage.css" />
 
 <container class="logout-container">
-    <div class="logout-wrapper">
-        <div class="form">
-    <img src="images/avatar.png" alt="">
-			<div class="logout-btn">Log Out</div>
-		</div>
+	<div class="logout-wrapper">
+
+		<form action="/logout" method="POST" class="form">
+			<img src="images/avatar.png" alt="">
+			<div class="logout-btn">
+				<input type="submit" value="Log Out"></input>
+			</div>
+	</div>
+	</form>
 	</div>
 </container>

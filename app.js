@@ -63,8 +63,8 @@ app.get('/dashboard', (req, res) => {
 const router = express.Router(); 
 app.use('/', router); //makes express use router on every web address
 
-router.use('/', require("./routers/account_management/login.js")); //login page
 router.use('/', require("./routers/account_management/logout.js")); //logout page
+router.use('/', require("./routers/account_management/login.js")); //login page
 router.use('/', require("./routers/account_management/signup.js")); //sign up page
 router.use('/', require("./routers/profiles.js")); //find a profile page
 router.use('/', require("./routers/myprofile.js")); //edit my profile page
@@ -75,9 +75,9 @@ router.use('*', require("./routers/static/error404.js")); //404 page
 
 
 
-app.get("/", (req, res) => {
-	res.render("HomePage", { user: {id: 1, username: "bob"} });
-});
+// app.get("/", (req, res) => {
+// 	res.render("HomePage", { user: {id: 1, username: "bob"} });
+// });
 
 
 

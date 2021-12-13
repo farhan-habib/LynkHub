@@ -1,15 +1,20 @@
 <link rel="stylesheet" type="text/css" href="styles/SignupPage.css" />
 <container class="signup-container">
 	<div class="signup-wrapper">
-		<form action="" class="form"><img src="images/avatar.png" alt="">
+		{{#if (isdefined user.username)}}
+		<div>You are already logged in.</div>
+		<li><a class="nav-links" href="/logout">Log Out</a></li>
+		{{else}}
+		<form action="signup" method="POST" class="form"><img src="images/avatar.png" alt="">
 			<header>Sign Up</header>
-			<div class="input-group"><input type="text" name="signinUsername" id="signinUsername"
+			<div class="input-group"><input type="text" name="username" id="username"
 					required=""><label>Username</label></div>
-			<div class="input-group"><input type="password" name="signinPassword" id="signinPassword"
+			<div class="input-group"><input type="password" name="password" id="password"
 					required=""><label>Password</label></div>
-			<div class="input-group"><input type="password" name="confirmsigninPassword" id="confirmsigninPassword"
+			<div class="input-group"><input type="password"  ame="confirmpassword" id="confirmpassword"
 					required=""><label>Confirm Password</label></div>
-			<div class="signup-btn">Sign Up</div>
+			<div class="signup-btn"><input type="submit" value="Sign Up"></input></div>
 		</form>
+		{{/if}}
 	</div>
 </container>

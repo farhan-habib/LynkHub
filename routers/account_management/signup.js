@@ -1,35 +1,13 @@
 var router = require('express').Router();
 const dbUtil = require("../../util/dbUtil")
 
-const form = `<form action="/signup" method="post">
-<div>
-	<label>Username:</label>
-	<input type="text" name="username"/>
-</div>
-<div>
-	<label>Password:</label>
-	<input type="password" name="password"/>
-</div>
-<div>
-	<input type="submit" value="Sign Up"/>
-</div>
-</form>`;
-
 router.get('/signup', async function (req, res) {
-	// console.log(req.user);
-	dbUtil.checkuserPassword("bob", "test");
-	let sentHTML = "";
-
-	if (req.user) {
-		sentHTML += "<div> Logged in </div>"
-	} else {
-		sentHTML += "<div> Not Logged in </div>"
-	}
-	sentHTML += form;
-
-	res.send(sentHTML);
+	
+	res.render("SignupPage", { user: req.user });
 
 });
+
+
 router.post('/signup', async function (req, res) {
 
 
@@ -46,5 +24,17 @@ router.post('/signup', async function (req, res) {
 	}
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;

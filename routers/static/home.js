@@ -5,7 +5,7 @@ router.get('/', (req, res) => {
 })
 //Router that sends Home Page
 router.get('/home', (req, res) => {
-	res.send("home page");
+	res.render("HomePage", { user: req.user });
 })
 
 

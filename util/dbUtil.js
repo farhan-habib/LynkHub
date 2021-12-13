@@ -61,6 +61,7 @@ class dbUtil {
 			this.db.get("SELECT users.hashed_password, users.salt FROM users WHERE username = $username", { $username: username },
 				function (err, row) {
 					if (err) reject(err);
+					if(!row) reject("No user with that username")
 					let { hashed_password, salt } = row;
 					resolve(crypto.timingSafeEqual(passwordUtil.hashPassword(passwordToCheck, salt), hashed_password))
 				});

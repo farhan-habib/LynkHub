@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"fullstart": "npm i && node ./setup/reset.js && node app.js",
-		"start": "node ./setup/reset.js && node app.js",
+		"start": "node app.js",
 		"reset": "node ./setup/reset.js"
 	},
 	"author": "",
