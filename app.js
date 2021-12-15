@@ -63,6 +63,9 @@ app.get('/dashboard', (req, res) => {
 const router = express.Router(); 
 app.use('/', router); //makes express use router on every web address
 
+
+
+router.use('/', require("./routers/page_management/viewPage.js")); //viewPage page
 router.use('/', require("./routers/account_management/logout.js")); //logout page
 router.use('/', require("./routers/account_management/login.js")); //login page
 router.use('/', require("./routers/account_management/signup.js")); //sign up page
