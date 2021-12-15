@@ -54,15 +54,19 @@ class dbUtil {
 	 * 
 	 * @param {String} username The username of the user
 	 * @param {String} passwordToCheck The password which you want to verify the validity of
-	 * @returns A promise that resolves to true or false, depending on if the password passed in was the user's password or not
+	 * @returns A promise that resolves to true or false, depending on if the password passed in was the user's password or not. If The program can not find a user with that username it returns false
 	 */
 	async checkuserPassword(username, passwordToCheck) {
 		return new Promise((resolve, reject) => {
 			this.db.get("SELECT users.hashed_password, users.salt FROM users WHERE username = $username", { $username: username },
-				function (err, row) {
+				(err, row) => {
 					if (err) reject(err);
-					if(!row) reject("No user with that username")
-					let { hashed_password, salt } = row;
+					
+					
+					let [hashed_password,salt] = [row?.hashed_password, row?.salt]
+					if(hashed_password == undefined || salt == undefined) return resolve(false);
+					
+					
 					resolve(crypto.timingSafeEqual(passwordUtil.hashPassword(passwordToCheck, salt), hashed_password))
 				});
 
