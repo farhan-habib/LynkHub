@@ -122,6 +122,10 @@
 	color: var(--purple);
 	font-size: 0.8rem;
 }
+
+.reminder-text {
+	padding-bottom: 1vh;
+}
 .login-btn {
 	display: block;
 	margin-left: auto;
@@ -135,6 +139,12 @@
 	border-radius: 5px;
 	cursor: pointer;
 	text-align: center;
+	color:white;
+}
+.login-btn:active,
+.login-btn:visited,
+.login-btn:active {
+	color:white;
 }
 .singup-link-btn {
 	display: block;

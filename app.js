@@ -67,7 +67,6 @@ router.use('/', require("./routers/account_management/logout.js")); //logout pag
 router.use('/', require("./routers/account_management/login.js")); //login page
 router.use('/', require("./routers/account_management/signup.js")); //sign up page
 router.use('/', require("./routers/profiles.js")); //find a profile page
-router.use('/', require("./routers/myprofile.js")); //edit my profile page
 router.use('/', require("./routers/static/home.js")); //home page
 router.use('/', require("./routers/static/about.js")); //about page
 router.use('*', require("./routers/static/error404.js")); //404 page

@@ -2,8 +2,12 @@
 <container class="login-container">
 	<div class="login-wrapper">
 		{{#if (isdefined user.username)}}
-	<div>You are already logged in.</div>
-		<li><a class="nav-links" href="/logout">Log Out</a></li>
+		<form class="form">
+			<img src="images/avatar.png" alt="" />
+			<div class="reminder-text">You are already logged in.</div>
+			<a class="login-btn" href="/logout">Log Out?</a>
+		</form>
+
 		{{else}}
 		<form action="/login" method="POST" class="form"><img src="images/avatar.png" alt="">
 			<header>Log In</header>

@@ -1,7 +1,7 @@
 var router = require('express').Router();
 
 router.get('/profiles', function (req, res) {
-	res.send('find a profile page');
+	res.render("Profiles", {users:["bob", "joe", "mary"]});
 });
 
 module.exports = router;

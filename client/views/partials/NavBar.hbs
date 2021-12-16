@@ -1,10 +1,14 @@
 <link rel="stylesheet" type="text/css" href="styles/NavBar.css" />
 
-<nav class="nav-container"><a class="home-nav-link" href="/">
+<nav class="nav-container">
+	<a class="home-nav-link" href="/">
 		<h1 class="navbar-logo">LynkHub <i class="fas fa-link"></i></h1>
 	</a>
 	<ul class="nav-menu">
 		<li><a class="nav-links" href="/about">About</a></li>
+		{{#if (isdefined user.username)}}
+		<li><a class="nav-links" href="/profiles">Profiles</a></li>
+		{{/if}}
 		{{#if (isdefined user.username)}}
 		<li><a class="nav-links" href="/logout">Log Out</a></li>
 		{{else}}

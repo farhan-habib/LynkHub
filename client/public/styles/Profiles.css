@@ -51,7 +51,8 @@
 }
 
 .profiles-group {
-	padding-top: 2vh;
+	padding-top: 1vh;
+	cursor: pointer;
 }
 
 @-webkit-keyframes ProfilesBackground {

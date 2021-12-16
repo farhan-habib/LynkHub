@@ -1,14 +1,14 @@
-<link rel="stylesheet" type="text/css" href="styles/Profile.css" />
+<link rel="stylesheet" type="text/css" href="styles/Profiles.css" />
 
 <container class="profiles-container">
 	<div class="profiles-wrapper">
 		<ul class="form">
 			<img src="images/avatar.png" alt="" />
-			<header>Lynks:</header>
+			<header>Lynk Users:</header>
 			{{! profiles are a json with a list of names under people: https://handlebarsjs.com/examples/builtin-helper-each-block.html }}
-			{{#each this.urls}}
+			{{#each this.users}}
 				<div class="profiles-group">
-					<a class="profiles-btn" href="{{this.url}}">{{this.nameOfLink}}</a>
+					<div class="profiles-btn">{{this}}</div>
 				</div>
 			{{/each}}
 		</ul>
