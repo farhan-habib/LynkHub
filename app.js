@@ -22,7 +22,10 @@ app.engine(
 		helpers: {
 			isdefined(value){
 				return value != undefined;
-			}
+			},
+			isnull(value){
+				return value === null
+			},
 		},
 	})
 );

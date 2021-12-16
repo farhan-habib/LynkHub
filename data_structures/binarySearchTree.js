@@ -32,22 +32,19 @@ class BinarySeachTree {
 	}
 
 	inOrderTraversal() {
-		console.log(this.root);
+		const returnValue = [];
 		const inOrderTraversalHelper = function(node){
 			
-			if(node.left) inOrderTraversalHelper(node.left);
-			console.log(node.data);
-			if(node.right) inOrderTraversalHelper(node.right);
+			if(node?.left) inOrderTraversalHelper(node.left);
+			if(node)returnValue.push(node.data);
+			if(node?.right) inOrderTraversalHelper(node.right);
 		}
 		inOrderTraversalHelper(this.root);
+		return returnValue;
 	}
 }
 
 
+module.exports = BinarySeachTree;
 
-const bst = new BinarySeachTree();
 
-bst.insert("bob")
-bst.insert("joe")
-bst.insert("a2343424")
-bst.inOrderTraversal();

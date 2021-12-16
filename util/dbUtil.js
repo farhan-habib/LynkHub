@@ -96,6 +96,19 @@ class dbUtil {
 		return this.getUserFromUsername(username);
 
 	}
+
+	/**
+	 * @returns A promise that resolves to an array containing objects containing the usernames and ids of all of the users.
+	 */
+		async getusers() {
+		return new Promise((resolve, reject) => {
+			let userData = this.db.all("SELECT users.id, users.username FROM users",
+				function (err, row) {
+					if (err) reject(err);
+					resolve(row);
+				});
+		});
+	}
 }
 
 

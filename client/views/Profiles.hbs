@@ -6,11 +6,15 @@
 			<img src="images/avatar.png" alt="" />
 			<header>Lynk Users:</header>
 			{{! profiles are a json with a list of names under people: https://handlebarsjs.com/examples/builtin-helper-each-block.html }}
+{{#if (isnull this.users)}}
+		<div>There are currently no users that have signed up to LynkHub</div>
+{{else}}
 			{{#each this.users}}
 				<div class="profiles-group">
 					<div class="profiles-btn">{{this}}</div>
 				</div>
 			{{/each}}
+{{/if}}
 		</ul>
 	</div>
 </container>
