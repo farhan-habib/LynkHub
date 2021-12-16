@@ -7,8 +7,8 @@
 		{{else}}
 		<form action="signup" method="POST" class="form"><img src="images/avatar.png" alt="">
 			<header>Sign Up</header>
-			{{#if (isdefined notif.incorrectPassword)}}
-			<b>Notice: Your Login or Password was incorrect</b>
+			{{#if (isdefined notif.usernameTaken)}}
+			<b>Notice: that username is taken</b>
 			{{/if}}
 			<div class="input-group"><input type="text" name="username" id="username"
 					required=""><label>Username</label></div>

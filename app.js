@@ -47,20 +47,10 @@ app.use(bodyParser.urlencoded({ extended: true })); //allows full json objects i
 app.use(bodyParser.json());
 app.use(passport.initialize()); //initializes Passport User Authentication
 app.use(passport.session());	
+app.use(require('sanitize').middleware);
 
 require("./userauthentication.js"); //exported passport.js logic to another file
 
-//temporary check to see if user is logged in or not
-app.get('/dashboard', (req, res) => {
-	if (req.user) {
-		console.log("user logged in");
-		console.log(req.user);
-	} else {
-		console.log("user not logged in");
-	}
-
-	res.send(`Hello USER ${req?.user?.username} with ID ${req?.user?.id}. Your session ID is ${req?.sessionID} and your session expires in ${req.session.cookie.maxAge} milliseconds.<br><br>`);
-});
 
 //Routes
 const router = express.Router(); 

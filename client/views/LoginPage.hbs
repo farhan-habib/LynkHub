@@ -11,9 +11,12 @@
 		{{else}}
 		<form action="/login" method="POST" class="form"><img src="images/avatar.png" alt="">
 			<header>Log In</header>
+			{{#if (isdefined notif.incorrectPassword)}}
+			<b>Notice: Your Login or Password was incorrect</b>
+			{{/if}}
 			<div class="input-group"><input type="text" name="username" id="username" required=""><label>Username</label></div>
 			<div class="input-group"><input type="password" name="password" id="password" required=""><label>Password</label></div>
-			<input type="submit" class="login-btn">Log In</input>
+			<input type="submit" class="login-btn">
 			<div class="signup-link-wrapper">
 				<div class="singup-link-btn">Don't Have an account? <a class="signup-link" href="/signup">Sign Up.</a>
 				</div>
@@ -22,3 +25,8 @@
 		{{/if}}
 	</div>
 </container>
+
+<script>
+window.history.pushState({}, document.title, window.location.href.split("?")[0]);
+
+</script>

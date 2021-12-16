@@ -1,6 +1,3 @@
-
-
-
 class BinarySeachTree {
 	static Node  = class {
 		constructor(value) {
@@ -12,10 +9,11 @@ class BinarySeachTree {
 	constructor() {
 		this.root = null
 	}
-
+/**
+ * 
+ * @param {String} data the data being inserted into the binary search tree 
+ */
 	insert(data) {
-
-		
 		let node = new BinarySeachTree.Node(data);
 		if (this.root === null){ this.root = node; return;}  //if there is no root, set new node to root 
 		let current = this.root;
@@ -30,7 +28,10 @@ class BinarySeachTree {
 			}
 		}
 	}
-
+/**
+ * 
+ * @returns an array containing the elements in order 
+ */
 	inOrderTraversal() {
 		const returnValue = [];
 		const inOrderTraversalHelper = function(node){

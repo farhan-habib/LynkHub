@@ -4,7 +4,7 @@ const dbUtil = require("../../util/dbUtil")
 
 router.get('/signup', async function (req, res) {
 	
-	let passedInParams = {user:req.user, notif: {incorrectPassword: req.query.err}}
+	let passedInParams = {user:req.user, notif: {usernameTaken: req.query.err}}
 	
 	
 	res.render("SignupPage", passedInParams);
@@ -28,7 +28,7 @@ router.post('/signup', async function (req, res) {
 		res.redirect(url.format({
 			pathname:"/signup",
 			query:{err:true},
-		  }))
+		}))
 	}
 
 });

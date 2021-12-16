@@ -81,9 +81,9 @@ class dbUtil {
 	 * @returns A promise that resolves to an object containing the id as well as username of the user.
 	 */
 	async createNewUser(username, password) {
-		if (await this.getUserFromUsername(username)) { console.log("username in use"); return null; }
+		if (await this.getUserFromUsername(username)) { return null; }
 
-		console.log(`Making new user with Username:${username}, and password: ${password}`);
+		
 		const salt = passwordUtil.generateSalt();
 		const hashed_password = passwordUtil.hashPassword(password, salt);
 
