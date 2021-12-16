@@ -36,6 +36,7 @@
 
 .profiles-btn {
 	display: block;
+	text-decoration: none;
 	margin-left: auto;
 	border: none;
 	outline: none;
@@ -45,10 +46,14 @@
 	letter-spacing: 1px;
 	padding: 10px 20px;
 	border-radius: 5px;
-	cursor: pointer;
 	color: white;
 	text-align: center;
 }
+
+.profiles-group {
+	padding-top: 2vh;
+}
+
 @-webkit-keyframes ProfilesBackground {
 	0% {
 		background-position: 0% 50%;

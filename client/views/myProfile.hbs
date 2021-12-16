@@ -1,0 +1,24 @@
+<link rel="stylesheet" type="text/css" href="styles/myProfile.css" />
+
+<container class="myprofile-container">
+	<div class="myprofile-wrapper">
+		<table class="myProfile-table">
+			<tr>
+				<th class="myProfile-th">Name Of Link</th>
+				<th class="myProfile-th">Link</th>
+				<th class="myProfile-th">Delete URL</th>
+			</tr>
+			<form class="form" action="/myProfile" method="POST">
+				{{#each this.urls}}
+				<tr id="url_{{@index}}">
+					
+					<td class="myProfile-td">{{this.nameOfLink}}</td>
+					<td class="myProfile-td">{{this.url}}</td>
+					<td class="myProfile-td" class="myProfile-delete-button" onclick="document.getElementById(`url_{{@index}}`).remove()">❌</td>
+				</tr>
+				{{/each}}
+		</table>
+		<input type="submit" value="Save">
+		</form>
+	</div>
+</container>
