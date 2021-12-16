@@ -2,16 +2,12 @@
 
 <container class="profiles-container">
     <div class="profiles-wrapper">
-        <ul class="form">
+        <class class="form">
             <img src="images/avatar.png" alt="">
             {{!-- profiles are a json with a list of names under people: https://handlebarsjs.com/examples/builtin-helper-each-block.html --}}
-            {{#each profiles}}
-            <li>
-                <div class="logout-btn">
-                    {{this}}
-                </div>
-            </li>
-            {{/each}}
+            {{#each this.urls}}
+					<div class="UserUrl"><a href="{{this.url}}">{{this.nameOfLink}}</a></div>
+			{{/each}}
             
         </ul>
     </div>
