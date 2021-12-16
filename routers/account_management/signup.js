@@ -1,9 +1,13 @@
+const url = require('url');  
 var router = require('express').Router();
 const dbUtil = require("../../util/dbUtil")
 
 router.get('/signup', async function (req, res) {
 	
-	res.render("SignupPage", { user: req.user });
+	let passedInParams = {user:req.user, notif: {incorrectPassword: req.query.err}}
+	
+	
+	res.render("SignupPage", passedInParams);
 
 });
 
@@ -20,7 +24,11 @@ router.post('/signup', async function (req, res) {
 	}
 	else {
 		//A new Account was not created
-		res.redirect("/signup")
+
+		res.redirect(url.format({
+			pathname:"/signup",
+			query:{err:true},
+		  }))
 	}
 
 });

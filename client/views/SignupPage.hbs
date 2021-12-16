@@ -7,14 +7,20 @@
 		{{else}}
 		<form action="signup" method="POST" class="form"><img src="images/avatar.png" alt="">
 			<header>Sign Up</header>
+			{{#if (isdefined notif.incorrectPassword)}}
+			<b>Notice: Your Login or Password was incorrect</b>
+			{{/if}}
 			<div class="input-group"><input type="text" name="username" id="username"
 					required=""><label>Username</label></div>
 			<div class="input-group"><input type="password" name="password" id="password"
 					required=""><label>Password</label></div>
-			<div class="input-group"><input type="password"  ame="confirmpassword" id="confirmpassword"
-					required=""><label>Confirm Password</label></div>
 			<div class="signup-btn"><input type="submit" value="Sign Up"></input></div>
 		</form>
 		{{/if}}
 	</div>
 </container>
+
+<script>
+window.history.pushState({}, document.title, window.location.href.split("?")[0]);
+
+</script>
